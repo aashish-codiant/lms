@@ -8,7 +8,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en"
-    nighteye="disabled">
+    // nighteye="disabled"
+    >
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );

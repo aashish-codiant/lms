@@ -1,14 +1,12 @@
-import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
-import Search from '@/app/ui/search';
-import {fetchCustomers} from '@/app/lib/data';
-import {
-  CustomersTableType,
-  FormattedCustomersTable,
-} from '@/app/lib/definitions';
+import Image from "next/image";
+import { lusitana } from "@/app/ui/fonts";
+import Search from "@/app/ui/search";
+import { fetchCustomers } from "@/app/lib/data";
+import { CustomersTableType } from "@/app/lib/definitions";
 
 export default async function CustomersTable() {
   const customers = await fetchCustomers();
+  // const customers = await fetchCustomers();
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
@@ -30,7 +28,7 @@ export default async function CustomersTable() {
                         <div className="mb-2 flex items-center">
                           <div className="flex items-center gap-3">
                             <Image
-                              src={customer.image_url}
+                              src={customer?.image_url}
                               className="rounded-full"
                               alt={`${customer.name}'s profile picture`}
                               width={28}
@@ -40,7 +38,7 @@ export default async function CustomersTable() {
                           </div>
                         </div>
                         <p className="text-sm text-gray-500">
-                          {customer.email}
+                          {customer?.email}
                         </p>
                       </div>
                     </div>

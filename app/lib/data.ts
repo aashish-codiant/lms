@@ -169,7 +169,7 @@ export async function fetchInvoiceById(id: string) {
 
 export async function fetchCustomers() {
   try {
-    const customers = await sql<CustomerField[]>`
+    const customers = await sql<CustomersTableType[]>`
       SELECT
         id,
         name
